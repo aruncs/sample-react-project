@@ -1,0 +1,23 @@
+{
+  "name": "sample-react-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/aruncs/sample-react-project.git",
+  "author": "Aurn C S",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build-server-dev": "NODE_ENV='development' webpack --watch --config ./build-scripts/webpack.server.js",
+    "start-dev-server": "node ./dist/server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-preset-preact": "^2.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
