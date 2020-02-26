@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "build-server-dev": "NODE_ENV='development' webpack --config ./build-scripts/webpack.server.js",
+    "build-client-dev": "NODE_ENV='development' webpack --config ./build-scripts/webpack.client.js",
     "start-dev-server": "node ./dist/server/index.js"
   },
   "dependencies": {
