@@ -6,18 +6,21 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build-server-dev": "NODE_ENV='development' webpack --config ./build-scripts/webpack.server.js",
-    "build-client-dev": "NODE_ENV='development' webpack --config ./build-scripts/webpack.client.js",
-    "start-dev-server": "node ./dist/server/index.js"
+    "build-server-dev": "NODE_ENV='development' webpack --watch --config ./build-scripts/webpack.server.js",
+    "build-client-dev": "NODE_ENV='development' webpack --watch --config ./build-scripts/webpack.client.js",
+    "start-dev-server": "nodemon --inspect ./dist/server/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "pug": "^2.0.4",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "babel-preset-preact": "^2.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "nodemon": "^2.0.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }

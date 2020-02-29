@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const env = process.env.NODE_ENV
 
 module.exports = {
@@ -35,5 +35,11 @@ module.exports = {
   //     }
   //   ]
   // },
+  plugins: [
+    new CopyWebpackPlugin([{
+      from: path.join(__dirname, '..', 'src/server/views'),
+      to: path.join(__dirname, '..', 'dist/server/views')
+    }])
+  ],
   devtool: (env === 'production') ? '' : 'source-map'
 }
