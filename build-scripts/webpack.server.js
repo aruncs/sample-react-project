@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 const env = process.env.NODE_ENV
 
 module.exports = {
@@ -36,6 +38,7 @@ module.exports = {
   //   ]
   // },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{
       from: path.join(__dirname, '..', 'src/server/views'),
       to: path.join(__dirname, '..', 'dist/server/views')
