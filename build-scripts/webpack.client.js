@@ -1,6 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const env = process.env.NODE_ENV
 module.exports = {
@@ -13,7 +15,19 @@ module.exports = {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      __DEBUG__: true
+    }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, '..', 'src/client/images'),
+        to: path.join(__dirname, '..', 'dist/client/images')
+      },{
+        from: path.join(__dirname, '..', 'src/client/icons'),
+        to: path.join(__dirname, '..', 'dist/client/icons')
+      }
+    ]),
     new ManifestPlugin({
       fileName: path.resolve(__dirname, '..', 'src/server/resources.json'),
       prettyPrint: true

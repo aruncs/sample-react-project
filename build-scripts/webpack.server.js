@@ -38,10 +38,13 @@ module.exports = {
   //   ]
   // },
   plugins: [
+    new webpack.DefinePlugin({
+      __DEBUG__: true
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{
-      from: path.join(__dirname, '..', 'src/server/views'),
-      to: path.join(__dirname, '..', 'dist/server/views')
+      from: path.join(__dirname, '..', 'src/server/views/'),
+      to: path.join(__dirname, '..', 'dist/server/views/')
     }])
   ],
   devtool: (env === 'production') ? '' : 'source-map'

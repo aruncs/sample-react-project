@@ -8,13 +8,14 @@
   "scripts": {
     "build-server-dev": "NODE_ENV='development' webpack --watch --config ./build-scripts/webpack.server.js",
     "build-client-dev": "NODE_ENV='development' webpack --watch --config ./build-scripts/webpack.client.js",
-    "start-dev-server": "nodemon --inspect ./dist/server/index.js"
+    "start-dev-server": "nodemon --inspect ./dist/server/index.js",
+    "format": "prettier --no-semi --write 'src/**/*.{js,jsx}'"
   },
   "dependencies": {
     "express": "^4.17.1",
     "preact": "^10.3.2",
     "pug": "^2.0.4",
-    "webpack-node-externals": "^1.7.2"
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -23,8 +24,10 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
-    "webpack-manifest-plugin": "^2.2.0"
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }
