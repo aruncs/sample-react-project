@@ -2,5 +2,14 @@
 html
   head
     title Sample React App
-  body
-    div(id='app')
+
+    each source in scripts
+      script(src=source, defer)
+
+    script.
+      //window.source = !{scripts}
+      window._state = !{state}
+      console.log(scripts)
+
+  body !{content}
+    //- div(id='app')

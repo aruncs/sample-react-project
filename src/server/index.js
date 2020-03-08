@@ -15,7 +15,7 @@ function createExpressApp() {
   app.use(express.static(path.join(__dirname, "..", "client")))
   app.use(addResources(resourceMap))
   app.use(attachReduxStore)
-  //app.use(viewHandler)
+  app.use(viewHandler)
   app.use((req, res, next) => {
     res.render("index")
   })

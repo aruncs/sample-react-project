@@ -11,23 +11,32 @@
     "start-dev-server": "nodemon --inspect ./dist/server/index.js",
     "format": "prettier --no-semi --write 'src/**/*.{js,jsx}'"
   },
+  "_moduleAliases": {
+    "react": "node_modules/preact/compat",
+    "react-dom": "node_modules/preact/compat"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "preact": "^10.3.2",
+    "preact-render-to-string": "^5.1.4",
     "pug": "^2.0.4",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
     "babel-preset-preact": "^2.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
+    "module-alias": "^2.2.2",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-manifest-plugin": "^2.2.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "wrapper-webpack-plugin": "^2.1.0"
   }
 }

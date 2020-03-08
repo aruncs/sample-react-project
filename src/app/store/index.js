@@ -20,3 +20,9 @@ export function createReduxStore(initialState) {
   )
   return store
 }
+
+export function replaceReducer(reducers) {
+  const newReducers = Object.assign({}, globalReducers, reducers)
+  const reducer = createReducer(newReducers)
+  store.replaceReducer(reducer)
+}

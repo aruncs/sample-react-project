@@ -7,12 +7,29 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const env = process.env.NODE_ENV
 module.exports = {
   resolve: {
-    extensions: ['.js', '.jsx', '.scss']
+    extensions: ['.js', '.jsx', '.scss'],
+    alias: {
+      "react": "preact/compat",
+      "react-dom": "preact/compat"
+    }
   },
   entry: path.resolve(__dirname, '..', 'src/client/index.js'),
   output: {
     path: path.resolve(__dirname, '..', 'dist/client/js'),
     filename: '[name].[chunkhash].js'
+  },
+  module: {
+    rules: [{
+      test: /\.js|\.jsx$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      options: {
+        presets: [
+          "@babel/preset-env",
+          "preact"
+        ]
+      }
+    }]
   },
   plugins: [
     new webpack.DefinePlugin({
