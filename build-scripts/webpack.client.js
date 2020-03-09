@@ -13,7 +13,7 @@ module.exports = {
       "react-dom": "preact/compat"
     }
   },
-  entry: path.resolve(__dirname, '..', 'src/client/index.js'),
+  entry: path.resolve(__dirname, '..', 'src/client/index.jsx'),
   output: {
     path: path.resolve(__dirname, '..', 'dist/client/js'),
     filename: '[name].[chunkhash].js'

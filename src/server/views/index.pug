@@ -4,12 +4,9 @@ html
     title Sample React App
 
     each source in scripts
-      script(src=source, defer)
+      script(src='./js/' + source, type='text/javascript')
 
     script.
-      //window.source = !{scripts}
       window._state = !{state}
-      console.log(scripts)
-
   body !{content}
     //- div(id='app')

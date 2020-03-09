@@ -1,18 +1,12 @@
 import {h} from "preact"
 import renderToString from "preact-render-to-string"
-import {StaticRouter, Switch, Route} from "react-router-dom"
+import {StaticRouter} from "react-router-dom"
+import {getAllRoutes} from '../../app/routes'
 export default function viewHandler(req, res, next) {
 
   const App = (
     <StaticRouter location={req.url}>
-      <Switch>
-      <Route exact path='/home'>
-        <Home/>
-      </Route>
-      <Route exact path='/about'>
-        <About/>
-      </Route>
-      </Switch>
+      {getAllRoutes()}
     </StaticRouter>
   )
   const content = renderToString(App)
@@ -25,22 +19,4 @@ export default function viewHandler(req, res, next) {
     scripts,
     state
   })
-}
-
-
-function Home() {
-  return (
-    <div>
-      Home
-    </div>
-  )
-}
-
-
-function About() {
-  return (
-    <div>
-      About
-    </div>
-  )
 }

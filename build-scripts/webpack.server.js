@@ -47,7 +47,7 @@ module.exports = {
     new webpack.DefinePlugin({
       __DEBUG__: true
     }),
-    new CleanWebpackPlugin(),
+    //new CleanWebpackPlugin(),
     new WrapperWebpackPlugin({
       test: /\.jsx|\.js$/,
       header: 'require("module-alias/register");',
