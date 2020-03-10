@@ -40,14 +40,18 @@ module.exports = {
             "preact"
           ]
         }
+      },{
+        test: /\.(sa|sc|c)ss$/,
+        loader: 'null-loader'
       }
     ]
   },
   plugins: [
     new webpack.DefinePlugin({
-      __DEBUG__: true
+      __DEBUG__: true // use config to toggle this depending on the environment
     }),
     //new CleanWebpackPlugin(),
+
     new WrapperWebpackPlugin({
       test: /\.jsx|\.js$/,
       header: 'require("module-alias/register");',

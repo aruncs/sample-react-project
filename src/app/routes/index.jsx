@@ -10,6 +10,9 @@ export function getAllRoutes() {
       <Route exact path='/about'>
         <About/>
       </Route>
+      <Route exact path='/career'>
+        <Career/>
+      </Route>
     </Switch>
   )
 }
@@ -18,7 +21,7 @@ export function getAllRoutes() {
 function Home() {
   return (
     <div>
-      Home
+      Home Content
     </div>
   )
 }
@@ -27,7 +30,15 @@ function Home() {
 function About() {
   return (
     <div>
-      About
+      About Content
+    </div>
+  )
+}
+
+function Career() {
+  return (
+    <div>
+      Career Content
     </div>
   )
 }

@@ -2,10 +2,12 @@
 html
   head
     title Sample React App
-
+    each link in links
+      link(rel='stylesheet', type='text/css', href=link) 
+    
     each source in scripts
-      script(src='./js/' + source, type='text/javascript')
-
+      script(src=source, type='text/javascript')
+    
     script.
       window._state = !{state}
   body !{content}
