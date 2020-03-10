@@ -1,4 +1,4 @@
-import { isMainThread } from "worker_threads";
+import { isMainThread } from "worker_threads"
 
 export default function addResources(resourceMap) {
   return function(req, res, next) {

@@ -1,10 +1,9 @@
-import { h, Component } from "preact";
-import {Link} from "react-router-dom"
+import { h, Component } from "preact"
+import { Link } from "react-router-dom"
 
 import styles from "./styles.scss"
 
 class Header extends Component {
-
   render() {
     debugger
     return (
