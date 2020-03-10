@@ -1,11 +1,10 @@
 import { h, Component } from "preact"
 import { Link } from "react-router-dom"
-
+import { connect } from "react-redux"
 import styles from "./styles.scss"
 
 class Header extends Component {
   render() {
-    debugger
     return (
       <div className="header">
         <Link to="/home">
@@ -22,4 +21,7 @@ class Header extends Component {
   }
 }
 
-export default Header
+const mapStateToProps = state => {
+  return {}
+}
+export default connect(mapStateToProps)(Header)
