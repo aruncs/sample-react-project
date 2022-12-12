@@ -16,7 +16,7 @@
     "react-dom": "node_modules/preact/compat"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "pug": "^2.0.4",
